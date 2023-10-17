@@ -6,9 +6,9 @@ from product.models import Product
 
 
 class Cart(models.Model):
-    """Модель карзины"""
+    """Модель корзины"""
     title = models.CharField(max_length=50, default='Корзина', editable=False,
-                             verbose_name='Карзина')
+                             verbose_name='Корзина')
     products = models.ManyToManyField(Product, blank=True, verbose_name='Товары')
     user = models.OneToOneField('user.Profile', on_delete=models.CASCADE, related_name='cart',
                                   verbose_name='Пользователь')
